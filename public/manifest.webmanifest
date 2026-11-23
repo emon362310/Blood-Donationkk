@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "BLOODIX — Donate Blood • Save Lives",
+  "short_name": "BLOODIX",
+  "description": "রক্তের অভাবে যেন থেমে না যায় কোনো প্রাণ। যাচাইকৃত রক্তদাতা ও জরুরি রক্তদান ওয়েব অ্যাপ।",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#B5122A",
+  "background_color": "#FFF8F9",
+  "icons": [
+    {
+      "src": "/assets/aistudio/image-removebg-preview__1__4794faaf.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

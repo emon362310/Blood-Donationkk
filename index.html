@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <script>
+      (function () {
+        try {
+          var isExt = function (src, err) {
+            var s = String(src || '');
+            var st = String((err && err.stack) || '');
+            return (
+              s.indexOf('chrome-extension://') === 0 ||
+              s.indexOf('moz-extension://') === 0 ||
+              st.indexOf('chrome-extension://') !== -1 ||
+              st.indexOf('moz-extension://') !== -1
+            );
+          };
+          window.addEventListener(
+            'error',
+            function (e) {
+              if (e && isExt(e.filename, e.error)) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+              }
+            },
+            true
+          );
+          window.addEventListener(
+            'unhandledrejection',
+            function (e) {
+              var reason = e && e.reason;
+              if (reason && isExt('', reason)) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+              }
+            },
+            true
+          );
+        } catch (_e) {}
+      })();
+    </script>
+    <title>BLOODIX — Donate Blood • Save Lives | রক্তদান ও ডোনার ওয়েব অ্যাপ</title>
+    <meta name="description" content="BLOODIX — Donate Blood • Save Lives। বাংলাদেশের একটি নিরাপদ, যাচাইকৃত ও কমিউনিটি-ভিত্তিক রক্তদান ও ডোনার ব্যবস্থাপনা ওয়েব অ্যাপ।" />
+    <meta name="theme-color" content="#B5122A" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="BLOODIX" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="/assets/aistudio/image-removebg-preview__1__4794faaf.png" />
+    <link rel="apple-touch-icon" href="/assets/aistudio/image-removebg-preview__1__4794faaf.png" />
+    <meta property="og:title" content="BLOODIX — Donate Blood • Save Lives" />
+    <meta property="og:description" content="আপনার এক ব্যাগ রক্ত বাঁচাতে পারে একটি জীবন। যাচাইকৃত রক্তদাতা খুঁজুন, জরুরি রক্তের অনুরোধ করুন এবং মানবতার সেবায় যুক্ত হোন।" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#FFF8F9] text-[#241A1D] antialiased selection:bg-[#B5122A] selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

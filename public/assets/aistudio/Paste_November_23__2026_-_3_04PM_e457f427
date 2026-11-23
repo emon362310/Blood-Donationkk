@@ -1,0 +1,1654 @@
+রক্তবন্ধন (RoktoBondhon)
+
+সম্পূর্ণ Professional Blood Donation Platform তৈরির Master Prompt
+
+১. তোমার ভূমিকা
+
+তুমি একজন অভিজ্ঞ Senior Full-Stack Developer, Software Architect, UI/UX Designer, Database Engineer, Security Engineer এবং Google Apps Script Specialist হিসেবে কাজ করবে।
+
+তোমার কাজ হলো আমার জন্য একটি সম্পূর্ণ আধুনিক, প্রফেশনাল, নিরাপদ এবং বাস্তবে ব্যবহারযোগ্য Blood Donation Management Platform তৈরি করা।
+
+এটি কোনো সাধারণ Demo Website হবে না। এটি হবে একটি পূর্ণাঙ্গ Blood Donation Platform, যেখানে সাধারণ ব্যবহারকারী, ডোনার, রক্তের প্রয়োজন থাকা ব্যক্তি, স্বেচ্ছাসেবক, এলাকার প্রতিনিধি, অ্যাডমিন এবং সুপার অ্যাডমিন—সবার জন্য আলাদা সুবিধা থাকবে।
+
+ওয়েবসাইটের নাম:
+
+রক্তবন্ধন (RoktoBondhon)
+
+ওয়েবসাইটের সম্পূর্ণ User Interface বাংলা ভাষায় হবে।
+
+তবে কোডের Variable, Function, API Action এবং Database Field ইংরেজিতে রাখতে পারবে।
+
+আমার সঙ্গে সব ধরনের আলোচনা, ব্যাখ্যা, নির্দেশনা, Error Explanation এবং Development Report বাংলায় করবে।
+
+---
+
+২. প্রজেক্টের মূল প্রযুক্তি
+
+Frontend
+
+- React.js
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Lucide React Icons
+- Recharts
+- React Router
+- Axios অথবা Fetch API
+
+Backend
+
+- Google Apps Script
+
+Database
+
+- Google Sheets
+
+Image Storage
+
+- Google Drive অথবা উপযুক্ত Image Hosting Service
+
+Development Requirements
+
+- Component-Based Architecture
+- Reusable Components
+- Clean Code
+- Responsive Layout
+- Mobile First Design
+- Secure API Integration
+- Production-Oriented Structure
+
+Google Sheets-কে Database হিসেবে ব্যবহার করা হবে। Frontend থেকে সরাসরি Google Sheets অ্যাক্সেস করা যাবে না। সমস্ত Database Operation Google Apps Script API-এর মাধ্যমে পরিচালিত হবে।
+
+---
+
+৩. অত্যন্ত গুরুত্বপূর্ণ: সম্পূর্ণ Blood Red Premium Color Theme
+
+এটি আমার ওয়েবসাইটের সবচেয়ে গুরুত্বপূর্ণ Design Requirement।
+
+আমি চাই সম্পূর্ণ ওয়েবসাইটের একটি শক্তিশালী, প্রিমিয়াম এবং আকর্ষণীয় Blood Red Color Identity থাকবে।
+
+ওয়েবসাইটের প্রতিটি পেজ, প্রতিটি Section, প্রতিটি Card, প্রতিটি Button, প্রতিটি Form, Navigation, Login, Registration, Dashboard, Admin Panel এবং Footer-এ লাল রঙের উপস্থিতি থাকতে হবে।
+
+কোনো পেজ যেন সম্পূর্ণ সাধারণ সাদা বা নীল রঙের Template Website-এর মতো না দেখায়।
+
+Main Color Palette
+
+নিচের Color Palette অনুসরণ করবে:
+
+- Primary Blood Red: "#B5122A"
+- Deep Blood Red: "#7F1023"
+- Crimson Red: "#D61F3C"
+- Bright Red Accent: "#F0445E"
+- Soft Red Background: "#FFF1F3"
+- Light Red Surface: "#FCE4E8"
+- Dark Charcoal: "#171316"
+- Deep Black: "#100D0F"
+- White: "#FFFFFF"
+- Soft Gray: "#F5F5F6"
+- Border Gray: "#E7E1E3"
+- Text Dark: "#241A1D"
+- Muted Text: "#75686C"
+
+Color Usage
+
+Primary Blood Red:
+
+- Primary Buttons
+- Register Buttons
+- Login Buttons
+- Active Navigation
+- Important Headings
+- Dashboard Highlights
+- Important Icons
+- Active Tabs
+- Form Focus States
+
+Deep Blood Red:
+
+- Dark Hero Sections
+- Premium Headers
+- Footer Background
+- Important Gradient Background
+- Dark Dashboard Sections
+
+Crimson Red:
+
+- Hover Effects
+- Gradient Accents
+- Active States
+- Small Highlights
+
+Soft Red:
+
+- Small Cards
+- Background Sections
+- Form Containers
+- Statistics Background
+- Status Highlights
+
+White এবং Dark Charcoal:
+
+- Text Readability
+- Premium Contrast
+- Card Background
+- Navigation
+- Dashboard
+
+Gradient Design
+
+প্রয়োজনে নিচের মতো Premium Gradient ব্যবহার করবে:
+
+- Deep Blood Red to Crimson Red
+- Crimson Red to Bright Red
+- Dark Charcoal to Deep Blood Red
+- Soft Red to White
+
+Gradient যেন দেখতে Professional হয়।
+
+Important Design Rule
+
+আমি চাই প্রতিটি পেজে লাল রঙের উপস্থিতি চোখে পড়ার মতো থাকবে।
+
+তবে পুরো ওয়েবসাইটকে অতিরিক্ত লাল রঙ দিয়ে ভারী করে ফেলবে না।
+
+লাল হবে প্রধান Brand Identity। তার সঙ্গে Black, White, Charcoal এবং Soft Gray ব্যবহার করে Premium Balance তৈরি করবে।
+
+কোনো অপ্রাসঙ্গিক Blue, Purple, Green বা অন্য কোনো রংকে Primary Theme হিসেবে ব্যবহার করবে না।
+
+Success, Warning এবং Error Status-এর ক্ষেত্রে প্রয়োজনীয় Accessibility Color ব্যবহার করতে পারবে, তবে সেগুলোও মূল Red Design System-এর সঙ্গে সামঞ্জস্যপূর্ণ হতে হবে।
+
+---
+
+৪. Premium Compact Card-Based UI Design
+
+ওয়েবসাইটের প্রতিটি Section ছোট ছোট Professional Card-এর মাধ্যমে সাজাতে হবে।
+
+আমি চাই ওয়েবসাইট দেখতে হবে Compact, Organized এবং Premium।
+
+Card Design Requirements
+
+- Compact Card Layout
+- Rounded Corners
+- Soft Shadow
+- Thin Border
+- Small Icon Containers
+- Red Accent Border
+- Clean Typography
+- Balanced Padding
+- Consistent Spacing
+- Smooth Hover Effects
+
+Card Examples
+
+Homepage Statistics:
+
+- প্রতিটি Statistic আলাদা ছোট Card
+- ছোট Icon
+- বড় Number
+- ছোট Description
+- Red Accent
+
+Donor Cards:
+
+- ছোট Profile Image
+- Donor Name
+- Blood Group Badge
+- Location
+- Availability
+- Contact Button
+
+Dashboard Cards:
+
+- Small Icon
+- Statistics
+- Title
+- Percentage বা Summary
+- Compact Layout
+
+Form Cards:
+
+- পরিষ্কার Input Field
+- Label
+- Small Helper Text
+- Red Focus Border
+- সুন্দর Validation Message
+
+Layout Rules
+
+- বড় বড় অপ্রয়োজনীয় Section তৈরি করবে না।
+- অপ্রয়োজনীয় ফাঁকা জায়গা রাখবে না।
+- Card-এর মধ্যে পর্যাপ্ত Spacing থাকবে।
+- Mobile Screen-এ Card এক বা দুই Column অনুযায়ী সাজবে।
+- Desktop-এ প্রয়োজন অনুযায়ী ৩ বা ৪ Column Grid ব্যবহার করবে।
+- প্রতিটি Section-এর Hierarchy পরিষ্কার হবে।
+- ছোট Card হলেও যেন লেখা পড়তে অসুবিধা না হয়।
+
+প্রতিটি পেজে একই Design Language বজায় রাখতে হবে।
+
+---
+
+৫. সম্পূর্ণ ওয়েবসাইটে Premium Animation System
+
+আমি চাই ওয়েবসাইটের প্রায় প্রতিটি Interactive Element-এ Professional Animation থাকবে।
+
+শুধু Homepage-এ Animation দিলেই হবে না।
+
+Registration, Login, Navigation, Sidebar, Button, Card, Input, Dropdown, Modal, Dashboard, Table, Notification—সব জায়গায় সুন্দর Animation থাকবে।
+
+A. Navigation Animation
+
+- Navbar Smooth Entrance
+- Active Menu Red Underline Animation
+- Hover করলে Text Color Transition
+- Navigation Button Hover Animation
+- Mobile Menu Slide Animation
+- Dropdown Smooth Open/Close
+- Active Menu Indicator Animation
+
+B. Button Animation
+
+প্রতিটি Button-এ থাকবে:
+
+- Smooth Hover Transition
+- Slight Scale Effect
+- Subtle Shadow
+- Red Gradient Transition
+- Click Feedback
+- Loading Spinner
+- Success State Animation
+
+Register এবং Login Button বিশেষভাবে Premium হবে।
+
+C. Card Animation
+
+- Fade In
+- Staggered Entrance
+- Hover Lift
+- Shadow Transition
+- Border Highlight
+- Icon Animation
+- Smooth Content Transition
+
+D. Registration Animation
+
+- Multi-Step Slide Transition
+- Progress Bar Animation
+- Input Focus Animation
+- Validation Shake বা Subtle Highlight
+- Step Completion Animation
+- Success Checkmark
+- Form Submission Loading State
+
+E. Login Animation
+
+- Premium Card Entrance
+- Input Focus Animation
+- Password Visibility Transition
+- Button Loading Animation
+- Login Success Animation
+- Error Message Transition
+
+F. Dashboard Animation
+
+- Sidebar Transition
+- Dashboard Card Entrance
+- Animated Statistics
+- Chart Animation
+- Table Row Hover
+- Tab Switching Animation
+- Notification Dropdown
+- Modal Transition
+
+G. Homepage Animation
+
+- Blood Drop Animation
+- Heartbeat Animation
+- Hero Text Reveal
+- Button Entrance
+- Statistics Counter
+- Scroll Reveal
+- Donor Card Stagger Animation
+
+H. Representative Dashboard Animation
+
+- Area Assignment Card Animation
+- Verification Status Transition
+- Task Completion Animation
+- Report Submission Feedback
+- Dashboard Statistics Animation
+
+I. Loading Animation
+
+- Blood Drop Loader
+- Skeleton Loading
+- Button Loading
+- Page Transition Loading
+- Empty State Animation
+
+Animation Quality
+
+Framer Motion ব্যবহার করবে।
+
+প্রয়োজন অনুযায়ী CSS Transition ব্যবহার করতে পারবে।
+
+অ্যানিমেশনগুলো হবে:
+
+- Smooth
+- Modern
+- Lightweight
+- Consistent
+- Professional
+- Mobile Friendly
+
+অতিরিক্ত Bounce, Flashing এবং অপ্রয়োজনীয় Animation ব্যবহার করবে না।
+
+Reduced Motion Accessibility Support রাখতে হবে।
+
+---
+
+৬. সম্পূর্ণ Registration এবং Login System
+
+এটি অত্যন্ত গুরুত্বপূর্ণ।
+
+কোনো OTP System থাকবে না
+
+এই প্রজেক্টে কোনো ধরনের OTP ব্যবহার করবে না।
+
+নিষিদ্ধ:
+
+- SMS OTP
+- Email OTP
+- Phone OTP
+- OTP Registration
+- OTP Login
+- OTP Verification
+- OTP Password Reset
+
+Registration
+
+ব্যবহারকারী নিজে Registration করতে পারবে।
+
+প্রয়োজনীয় তথ্য:
+
+- সম্পূর্ণ নাম
+- মোবাইল নম্বর অথবা ইমেইল (যেকোনো একটি আবশ্যক)
+- পাসওয়ার্ড
+- Confirm Password
+- প্রয়োজনীয় অন্যান্য তথ্য
+
+Login
+
+ব্যবহারকারী নিচের যেকোনো একটি ব্যবহার করে লগইন করতে পারবে:
+
+- মোবাইল নম্বর + পাসওয়ার্ড
+- ইমেইল + পাসওয়ার্ড
+
+Registration Page Design
+
+Registration Page হবে বিশেষভাবে Premium Blood Red Theme-এ তৈরি।
+
+- Deep Red Background Accent
+- White বা Soft Red Registration Card
+- Red Gradient Register Button
+- Animated Input Fields
+- Progress Indicator
+- সুন্দর Step Transition
+- Premium Form Validation
+- Animated Success State
+
+Login Page Design
+
+- Premium Red Login Card
+- Red Brand Icon
+- Animated Input Focus
+- Password Show/Hide
+- Remember Me (নিরাপদ Session Policy অনুযায়ী)
+- Forgot Password
+- Red Gradient Login Button
+- Smooth Login Animation
+
+Password Security
+
+Password কখনো Plain Text আকারে সংরক্ষণ করবে না।
+
+Secure Salted Password Hashing ব্যবহার করবে।
+
+শুধু সাধারণ SHA-256 ব্যবহার করে Password Storage করবে না।
+
+Secure Session Management, Random Session Token, Hashed Session Token Storage, Session Expiration, Session Revocation এবং Login Rate Limiting বাস্তবায়ন করবে।
+
+Apps Script-এর নিরাপত্তাগত সীমাবদ্ধতা থাকলে তা স্পষ্টভাবে জানাবে এবং প্রয়োজন অনুযায়ী নিরাপদ Authentication Service ব্যবহারের বিকল্প প্রস্তাব করবে।
+
+Password Recovery
+
+OTP ছাড়া নিরাপদ Password Recovery System তৈরি করবে।
+
+প্রয়োজনে Admin-Assisted Password Reset ব্যবস্থা থাকবে।
+
+---
+
+৭. Homepage Design
+
+Homepage হবে ওয়েবসাইটের সবচেয়ে আকর্ষণীয় এবং Premium পেজ।
+
+Navigation Bar
+
+- Logo
+- Home
+- রক্তদাতা খুঁজুন
+- রক্তের অনুরোধ
+- ক্যাম্পেইন
+- আমাদের সম্পর্কে
+- যোগাযোগ
+- Login
+- Register
+
+Register Button হবে Red Gradient Premium Button।
+
+Login Button হবে সুন্দর Outline বা Filled Red Style।
+
+Active Menu-তে Red Underline থাকবে।
+
+Mobile Menu-তে Smooth Slide Animation থাকবে।
+
+Hero Section
+
+Background:
+Deep Blood Red এবং Crimson Red Gradient।
+
+Headline:
+
+"রক্তের অভাবে যেন থেমে না যায় কোনো প্রাণ"
+
+Subtitle:
+
+"আপনার এক ব্যাগ রক্ত বাঁচাতে পারে একটি জীবন। রক্তদাতা খুঁজুন, রক্তদান করুন, মানুষের পাশে দাঁড়ান।"
+
+Buttons:
+
+- রক্তদাতা খুঁজুন
+- ডোনার হিসেবে যুক্ত হোন
+
+Hero Section-এ Animated Blood Drop, Subtle Heartbeat এবং Premium Visual থাকবে।
+
+Statistics Cards
+
+- মোট ডোনার
+- অনুমোদিত ডোনার
+- সম্পন্ন রক্তদান
+- চলমান রক্তের অনুরোধ
+
+প্রতিটি আলাদা Compact Card হবে।
+
+Donor Search
+
+Blood Group এবং Location দিয়ে Donor Search করার ব্যবস্থা থাকবে।
+
+Emergency Blood Request
+
+জরুরি রক্তের অনুরোধ Red Highlighted Card-এ দেখাবে।
+
+Recent Donors
+
+ছোট Professional Donor Card ব্যবহার করবে।
+
+How It Works
+
+তিন বা চারটি Compact Step Card থাকবে।
+
+Other Sections
+
+- Blood Donation Benefits
+- Campaigns
+- Awareness Blog
+- FAQ
+- Contact
+- Footer
+
+সব Section-এ Red Brand Identity বজায় রাখতে হবে।
+
+---
+
+৮. Public Website Pages
+
+নিচের সবগুলো Page তৈরি করবে:
+
+১. Home
+
+২. About Us
+
+৩. Find Donors
+
+৪. Donor Details
+
+৫. Blood Request
+
+৬. Emergency Blood Request
+
+৭. Blood Request List
+
+৮. Campaigns
+
+৯. Campaign Details
+
+১০. Awareness Blog
+
+১১. Blog Details
+
+১২. Blood Compatibility Guide
+
+১৩. FAQ
+
+১৪. Contact
+
+১৫. Privacy Policy
+
+১৬. Terms & Conditions
+
+১৭. Login
+
+১৮. Registration
+
+১৯. Forgot Password
+
+২০. 404 Page
+
+প্রতিটি Page-এ একই Premium Blood Red Design System ব্যবহার করবে।
+
+---
+
+৯. Donor Registration System
+
+Donor Registration হবে Multi-Step Form।
+
+Step 1: Personal Information
+
+- পূর্ণ নাম
+- মোবাইল নম্বর
+- ইমেইল (ঐচ্ছিক)
+- জন্মতারিখ
+- লিঙ্গ (ঐচ্ছিক)
+- প্রোফাইল ছবি (ঐচ্ছিক)
+
+Step 2: Blood Information
+
+- রক্তের গ্রুপ
+- সর্বশেষ রক্তদানের তারিখ
+- আগে রক্তদান করেছেন কি না
+- বর্তমানে রক্তদান করতে আগ্রহী কি না
+- Availability
+
+Blood Groups:
+
+- A+
+- A-
+- B+
+- B-
+- AB+
+- AB-
+- O+
+- O-
+
+Step 3: Location
+
+- বিভাগ
+- জেলা
+- উপজেলা / থানা
+- ইউনিয়ন
+- ওয়ার্ড
+- এলাকা
+- বিস্তারিত ঠিকানা
+
+Step 4: Additional Information
+
+- নিজের সম্পর্কে সংক্ষিপ্ত বিবরণ
+- যোগাযোগের পছন্দ
+- ফোন নম্বর পাবলিক দেখানোর অনুমতি
+- Privacy Settings
+- Terms & Conditions সম্মতি
+
+Submission
+
+Registration সফল হলে ব্যবহারকারী Success Message পাবে।
+
+তার Account Pending Verification থাকবে।
+
+তার তথ্য Admin Panel-এ জমা হবে।
+
+Admin Approval ছাড়া তার Profile Public Directory-তে দেখানো যাবে না।
+
+---
+
+১০. Donor Verification System
+
+Admin Panel থেকে ডোনারের তথ্য যাচাই করা যাবে।
+
+Verification Status
+
+- Pending Verification
+- Under Review
+- Phone Contacted
+- Verified
+- Approved
+- Rejected
+- Correction Required
+- Suspended
+
+Verification Status এবং Account Status আলাদা করে সংরক্ষণ করবে।
+
+Admin Verification
+
+Admin দেখতে পারবেন:
+
+- নাম
+- মোবাইল
+- ইমেইল
+- রক্তের গ্রুপ
+- ঠিকানা
+- জেলা
+- উপজেলা
+- অন্যান্য তথ্য
+
+Admin ডোনারকে ফোন করে তথ্য যাচাই করবেন।
+
+Admin Actions:
+
+- ফোনে যোগাযোগ করেছেন
+- যোগাযোগ করা যায়নি
+- তথ্য সঠিক
+- তথ্য ভুল
+- রক্তের গ্রুপ নিশ্চিত
+- Correction Required
+- Approve
+- Reject
+- Suspend
+
+Verification Notes রাখবে।
+
+কে যাচাই করেছেন, কখন করেছেন এবং কী সিদ্ধান্ত নিয়েছেন, সব Log করতে হবে।
+
+শুধু Admin Approval-এর পর ডোনার Public হবে।
+
+---
+
+১১. Donor Search System
+
+ব্যবহারকারীরা সহজে ডোনার খুঁজতে পারবে।
+
+Filters:
+
+- Blood Group
+- Division
+- District
+- Upazila
+- Union
+- Ward
+- Area
+- Availability
+
+Donor Card-এ থাকবে:
+
+- Profile Image
+- Name
+- Blood Group
+- Location
+- Last Donation Date
+- Availability
+- Contact Option
+
+শুধু Approved এবং Active Donor দেখাবে।
+
+Donor-এর সম্মতি ছাড়া তার ফোন নম্বর Public করা যাবে না।
+
+ফোন নম্বর Public না থাকলে Contact Request System ব্যবহার করবে।
+
+---
+
+১২. Blood Request System
+
+ব্যবহারকারী রক্তের জন্য আবেদন করতে পারবে।
+
+Form Fields:
+
+- রোগীর নাম
+- আবেদনকারীর নাম
+- যোগাযোগের নম্বর
+- রক্তের গ্রুপ
+- কত ব্যাগ রক্ত প্রয়োজন
+- হাসপাতালের নাম
+- হাসপাতালের ঠিকানা
+- বিভাগ
+- জেলা
+- উপজেলা
+- প্রয়োজনের তারিখ
+- সময়
+- জরুরিতার মাত্রা
+- রোগীর অবস্থা
+- অতিরিক্ত তথ্য
+
+Request Status
+
+- Pending
+- Under Review
+- Approved
+- Donor Matching
+- Donor Found
+- Partially Fulfilled
+- Completed
+- Rejected
+- Cancelled
+- Expired
+
+Admin যাচাই করে Request Approve করতে পারবেন।
+
+---
+
+১৩. Emergency Blood Request
+
+জরুরি রক্তের অনুরোধের জন্য আলাদা Section থাকবে।
+
+জরুরি Request Homepage-এ Red Highlighted Card হিসেবে দেখাবে।
+
+Admin এবং সংশ্লিষ্ট এলাকার Representative এটি দেখতে পারবেন।
+
+---
+
+১৪. Area Representative Management System
+
+এটি অত্যন্ত গুরুত্বপূর্ণ।
+
+Admin বাংলাদেশের যেকোনো এলাকার জন্য এক বা একাধিক Representative নিয়োগ করতে পারবেন।
+
+Geographic Hierarchy
+
+- Division
+- District
+- Upazila / Thana
+- Union
+- Ward
+- Area
+
+Representative Appointment
+
+একই এলাকায় একাধিক Representative নিয়োগ করা যাবে।
+
+উদাহরণ:
+
+চট্টগ্রাম জেলার জন্য:
+
+- Representative 1
+- Representative 2
+
+হাটহাজারী উপজেলার জন্য:
+
+- Representative 3
+- Representative 4
+
+একজন Representative-কে একাধিক এলাকা Assign করা যাবে।
+
+Representative Dashboard
+
+- Total Assigned Areas
+- Pending Donors
+- Verified Donors
+- Pending Requests
+- Emergency Requests
+- Completed Tasks
+- Recent Activities
+
+Representative Permissions
+
+তারা পারবেন:
+
+- Assigned Area-এর Donor দেখতে
+- Pending Application দেখতে
+- ডোনারকে ফোন করতে
+- Phone Verification Notes দিতে
+- Approval Recommendation দিতে
+- Rejection Recommendation দিতে
+- Local Blood Requests দেখতে
+- Local Request পরিচালনায় সহায়তা করতে
+- Donor Matching-এ সহায়তা করতে
+- Campaign পরিচালনা করতে (Permission থাকলে)
+- Activity Report জমা দিতে
+
+Approval Rule
+
+সাধারণ Representative সরাসরি Final Approval বা Rejection দিতে পারবেন না।
+
+তারা Recommendation দেবেন।
+
+Final Approval Admin অথবা Super Admin করবেন।
+
+Super Admin চাইলে বিশেষ Permission দিতে পারবেন।
+
+Assignment Management
+
+Super Admin পারবেন:
+
+- Representative Create
+- Edit
+- Suspend
+- Deactivate
+- Area Assign
+- Area Remove
+- Permission Update
+- Multiple Representative Assign
+- Activity Monitoring
+
+Strict Backend Security
+
+Representative শুধু নিজের Assigned Area-এর ডেটা দেখতে পারবেন।
+
+Frontend Hide করাই যথেষ্ট নয়।
+
+প্রতিটি Backend API-তে Permission যাচাই করতে হবে।
+
+কেউ URL বা API Request Manipulation করে অন্য এলাকার ডেটা দেখতে পারবে না।
+
+---
+
+১৫. Dashboard System
+
+প্রতিটি Role-এর জন্য আলাদা Dashboard থাকবে।
+
+Donor Dashboard
+
+- My Profile
+- Profile Update
+- Donation History
+- Availability
+- Contact Requests
+- Notifications
+- Account Status
+
+Recipient Dashboard
+
+- Blood Requests
+- Request Status
+- Donor Contact
+- Notifications
+- Profile Settings
+
+Volunteer Dashboard
+
+- Profile
+- Assigned Tasks
+- Campaigns
+- Activity History
+- Reports
+
+Representative Dashboard
+
+- Overview
+- Assigned Areas
+- Donor Applications
+- Phone Verification
+- Blood Requests
+- Emergency Requests
+- Tasks
+- Campaigns
+- Reports
+- Notifications
+- Profile Settings
+
+Admin Dashboard
+
+- Overview
+- Donor Management
+- Donor Verification
+- Blood Request Management
+- Emergency Requests
+- User Management
+- Representative Management
+- Campaign Management
+- Volunteer Management
+- Donation Management
+- Blog Management
+- Reports
+- Website Settings
+- Activity Logs
+- System Logs
+
+Super Admin Dashboard
+
+- Admin Management
+- Representative Management
+- Global Permissions
+- System Configuration
+- Database Management
+- Security Settings
+- Audit Logs
+- Backup Management
+
+সব Dashboard-এ Compact Card, Red Accent, Professional Sidebar এবং Smooth Animation থাকবে।
+
+---
+
+১৬. Campaign Management
+
+Admin Campaign তৈরি করতে পারবেন।
+
+Fields:
+
+- Campaign Title
+- Description
+- Banner
+- Event Date
+- Start Time
+- End Time
+- Venue
+- Division
+- District
+- Upazila
+- Organizer
+- Registration Limit
+- Campaign Status
+
+ব্যবহারকারীরা Registration করতে পারবেন।
+
+Representative-রা Permission অনুযায়ী Campaign পরিচালনা করতে পারবেন।
+
+---
+
+১৭. Donation History
+
+Donation Record:
+
+- Donor ID
+- Blood Request ID
+- Recipient ID
+- Donation Date
+- Hospital
+- Blood Group
+- Verification Status
+- Verified By
+- Notes
+
+ডোনার নিজে Donation Record জমা দিতে পারবেন।
+
+Admin বা অনুমোদিত ব্যক্তি যাচাই না করা পর্যন্ত Verified হবে না।
+
+---
+
+১৮. Notification System
+
+Notification থাকবে:
+
+- Registration Successful
+- Account Approved
+- Account Rejected
+- Correction Required
+- Blood Request Submitted
+- Blood Request Approved
+- Donor Contact Request
+- Representative Assigned
+- New Task Assigned
+- Campaign Created
+
+OTP-ভিত্তিক Notification তৈরি করবে না।
+
+---
+
+১৯. Admin Settings
+
+General Settings
+
+- Website Name
+- Logo
+- Favicon
+- Description
+- Contact
+- Social Links
+
+Registration Settings
+
+- Registration Enable/Disable
+- Donor Registration
+- Volunteer Registration
+- Manual Approval
+
+Donor Settings
+
+- Public Directory
+- Phone Visibility
+- Profile Privacy
+- Verification Rules
+
+Blood Request Settings
+
+- Request Enable/Disable
+- Emergency Request
+- Approval Rules
+
+Representative Settings
+
+- Representative System
+- Multiple Representatives Per Area
+- Area Assignment
+- Permissions
+- Approval Authority
+
+Security Settings
+
+- Session Expiration
+- Login Rate Limit
+- Failed Login Protection
+- Access Control
+
+System Settings
+
+- Maintenance Mode
+- Database Status
+- API Status
+- Backup
+- Error Logs
+- Activity Logs
+
+---
+
+২০. Google Sheets Database Architecture
+
+একটি Google Spreadsheet তৈরি করবে।
+
+Spreadsheet Name:
+
+RoktoBondhon_Database
+
+এর মধ্যে নিচের ২৩টি Sheet স্বয়ংক্রিয়ভাবে তৈরি করবে।
+
+১. Users
+
+২. Donors
+
+৩. Recipients
+
+৪. Blood_Requests
+
+৫. Donations
+
+৬. Verifications
+
+৭. Volunteers
+
+৮. Campaigns
+
+৯. Campaign_Registrations
+
+১০. Contact_Requests
+
+১১. Notifications
+
+১২. Messages
+
+১৩. Locations
+
+১৪. Blogs
+
+১৫. Admins
+
+১৬. Activity_Logs
+
+১৭. Settings
+
+১৮. System_Logs
+
+১৯. Representatives
+
+২০. Representative_Assignments
+
+২১. Representative_Tasks
+
+২২. Representative_Reports
+
+২৩. Representative_Permissions
+
+Users
+
+user_id, full_name, email, phone, password_hash, password_salt, role, account_status, email_verified, phone_verified, profile_image, created_at, updated_at, last_login, deleted_at
+
+Donors
+
+donor_id, user_id, blood_group, date_of_birth, gender, division, district, upazila, union_name, ward, area, address, last_donation_date, availability, verification_status, phone_visibility, bio, created_at, updated_at
+
+Recipients
+
+recipient_id, user_id, full_name, phone, relationship_to_patient, division, district, upazila, address, created_at, updated_at
+
+Blood_Requests
+
+request_id, requester_user_id, patient_name, requester_name, blood_group, units_required, hospital_name, hospital_address, division, district, upazila, required_date, required_time, urgency_level, contact_phone, patient_condition, additional_notes, admin_status, donor_found_count, completed_units, assigned_representative_id, created_at, updated_at, completed_at
+
+Donations
+
+donation_id, donor_id, request_id, recipient_user_id, donation_date, hospital_name, blood_group, verification_status, verified_by, verified_at, notes, created_at
+
+Verifications
+
+verification_id, donor_id, admin_id, representative_id, verification_type, verification_result, verification_notes, verified_phone, verified_blood_group, verification_date, previous_status, new_status
+
+Volunteers
+
+volunteer_id, user_id, skills, division, district, upazila, availability, approval_status, joined_at
+
+Campaigns
+
+campaign_id, campaign_title, campaign_description, banner_url, event_date, start_time, end_time, venue, division, district, upazila, organizer, registration_limit, campaign_status, created_at
+
+Campaign_Registrations
+
+registration_id, campaign_id, user_id, participant_type, registration_status, attendance_status, registered_at
+
+Contact_Requests
+
+contact_request_id, request_id, donor_id, requester_user_id, donor_consent, contact_status, message, created_at, responded_at
+
+Notifications
+
+notification_id, user_id, title, message, notification_type, reference_id, is_read, created_at
+
+Messages
+
+message_id, sender_user_id, receiver_user_id, request_id, message_text, read_status, created_at
+
+Locations
+
+location_id, division_name, district_name, upazila_name, union_name, ward_name, is_active, sort_order
+
+Blogs
+
+blog_id, title, slug, category, thumbnail_url, content, author_id, publish_status, published_at, created_at
+
+Admins
+
+admin_id, full_name, email, phone, role, permissions, account_status, created_at, last_login
+
+Activity_Logs
+
+log_id, actor_id, actor_role, action, module, record_id, description, timestamp
+
+Settings
+
+setting_key, setting_value, setting_group, description, updated_by, updated_at
+
+System_Logs
+
+system_log_id, event_type, api_action, error_code, error_message, timestamp, request_id
+
+Representatives
+
+representative_id, user_id, representative_code, full_name, phone, email, profile_image, appointment_date, status, assigned_by, created_at, updated_at
+
+Representative_Assignments
+
+assignment_id, representative_id, assignment_level, division, district, upazila, union_name, ward_name, area, assigned_by, assigned_at, status, permission_level, notes
+
+Representative_Tasks
+
+task_id, representative_id, task_type, reference_id, title, description, priority, task_status, assigned_by, assigned_at, due_date, completed_at, notes
+
+Representative_Reports
+
+report_id, representative_id, report_title, report_content, report_type, related_area, submitted_at, reviewed_by, review_status, admin_notes
+
+Representative_Permissions
+
+permission_id, representative_id, can_view_donors, can_verify_donors, can_recommend_approval, can_recommend_rejection, can_view_requests, can_manage_local_requests, can_manage_campaigns, can_view_reports, granted_by, updated_at
+
+প্রয়োজনে অতিরিক্ত Security এবং Session Management Storage যুক্ত করতে পারবে। কিন্তু উপরের ২৩টি Sheet বাদ দেওয়া যাবে না।
+
+---
+
+২১. Google Apps Script Database Auto Setup
+
+আমাকে এমন একটি Google Apps Script তৈরি করে দিতে হবে, যেটি Run করলে স্বয়ংক্রিয়ভাবে সম্পূর্ণ Database তৈরি হবে।
+
+Main Function
+
+setupRoktoBondhonDatabase()
+
+কাজ:
+
+১. Google Spreadsheet তৈরি করবে।
+
+২. নাম হবে RoktoBondhon_Database।
+
+৩. Spreadsheet ID Script Properties-এ রাখবে।
+
+৪. ২৩টি Sheet তৈরি করবে।
+
+৫. প্রতিটি Sheet-এ Header বসাবে।
+
+৬. Header Row Freeze করবে।
+
+৭. Header Styling করবে।
+
+৮. Column Width সেট করবে।
+
+৯. Filter তৈরি করবে।
+
+১০. Date Format সেট করবে।
+
+১১. Default Settings তৈরি করবে।
+
+১২. Database Validation করবে।
+
+১৩. সব Sheet সঠিকভাবে তৈরি হয়েছে কি না পরীক্ষা করবে।
+
+গুরুত্বপূর্ণ
+
+Setup Function একাধিকবার Run করলেও আগের Data Delete করা যাবে না।
+
+আগের Sheet পুনরায় তৈরি করবে না।
+
+Missing Sheet বা Missing Header থাকলে নিরাপদভাবে যোগ করবে।
+
+Function অবশ্যই Idempotent হতে হবে।
+
+Additional Functions
+
+validateRoktoBondhonDatabase()
+
+seedInitialData()
+
+createInitialSuperAdmin()
+
+Super Admin-এর Production Password Hardcode করবে না।
+
+Fake Donor স্বয়ংক্রিয়ভাবে তৈরি করবে না।
+
+---
+
+২২. Google Apps Script Backend File Structure
+
+নিচের ফাইলগুলো তৈরি করবে:
+
+- Code.gs
+- Config.gs
+- Database.gs
+- Auth.gs
+- UserService.gs
+- DonorService.gs
+- RequestService.gs
+- RepresentativeService.gs
+- AdminService.gs
+- CampaignService.gs
+- NotificationService.gs
+- DonationService.gs
+- Security.gs
+- Utility.gs
+- appsscript.json
+
+প্রতিটি ফাইলের কাজ আলাদা থাকবে।
+
+---
+
+২৩. API Architecture
+
+Google Apps Script-এর doGet(e) এবং doPost(e) ব্যবহার করে API তৈরি করবে।
+
+AUTH
+
+- registerUser
+- loginUser
+- logoutUser
+- getCurrentUser
+- changePassword
+- requestPasswordReset
+- completeAdminPasswordReset
+
+DONOR
+
+- createDonor
+- getDonorProfile
+- updateDonorProfile
+- searchDonors
+- getDonorById
+- updateAvailability
+- getDonorHistory
+
+ADMIN
+
+- getAdminDashboard
+- getPendingDonors
+- approveDonor
+- rejectDonor
+- requestDonorCorrection
+- suspendDonor
+- getAllUsers
+- updateUser
+
+REPRESENTATIVE
+
+- createRepresentative
+- updateRepresentative
+- assignRepresentativeArea
+- removeRepresentativeAssignment
+- updateRepresentativePermissions
+- getRepresentativeDashboard
+- getAssignedAreaDonors
+- getAssignedAreaRequests
+- submitVerification
+- submitRepresentativeReport
+- getRepresentativeTasks
+
+BLOOD REQUEST
+
+- createBloodRequest
+- getBloodRequests
+- getBloodRequestDetails
+- approveBloodRequest
+- rejectBloodRequest
+- updateBloodRequest
+- matchDonors
+- completeBloodRequest
+- cancelBloodRequest
+
+DONATION
+
+- createDonationRecord
+- verifyDonationRecord
+- getDonationHistory
+
+NOTIFICATION
+
+- getNotifications
+- markNotificationRead
+- markAllNotificationsRead
+
+CAMPAIGN
+
+- createCampaign
+- updateCampaign
+- getCampaigns
+- registerCampaign
+- updateCampaignStatus
+
+SETTINGS
+
+- getPublicSettings
+- updateWebsiteSettings
+- getSystemSettings
+
+সব API-তে Input Validation, Authentication, Authorization, Sanitization, Error Handling এবং Activity Logging থাকতে হবে।
+
+Standard JSON Response:
+
+{
+"success": true,
+"message": "বাংলা বার্তা",
+"data": {},
+"error": null
+}
+
+---
+
+২৪. Security Requirements
+
+- Secure Password Hashing
+- Session Token Security
+- Session Expiration
+- Session Revocation
+- Login Rate Limiting
+- Duplicate Account Prevention
+- Input Validation
+- Output Sanitization
+- Role-Based Access Control
+- Area-Based Access Control
+- Backend Permission Validation
+- Audit Logs
+- Secure Error Handling
+- Concurrent Write Protection
+
+Google Apps Script-এর LockService ব্যবহার করবে।
+
+Batch Read এবং Batch Write ব্যবহার করবে।
+
+Spreadsheet ID এবং Secret Frontend-এ প্রকাশ করবে না।
+
+Google Sheets-এ সংরক্ষিত ব্যক্তিগত তথ্য অনুমতি ছাড়া প্রকাশ করবে না।
+
+---
+
+২৫. Reports এবং Analytics
+
+Admin Dashboard-এ থাকবে:
+
+- Total Donors
+- Approved Donors
+- Pending Donors
+- Rejected Donors
+- Blood Group Distribution
+- District-wise Donors
+- Upazila-wise Donors
+- Total Blood Requests
+- Emergency Requests
+- Completed Requests
+- Total Donations
+- Campaign Participation
+- Volunteer Activities
+- Representative Performance
+
+Date Filter, Area Filter, CSV Export এবং Print Option থাকবে।
+
+---
+
+২৬. Performance Optimization
+
+- Lazy Loading
+- Code Splitting
+- Pagination
+- Search Debouncing
+- API Caching
+- Optimized Images
+- Responsive Images
+- Error Boundaries
+- Reusable Components
+- Clean Folder Structure
+- Batch Database Operations
+
+---
+
+২৭. Testing
+
+নিচের সবগুলো বিষয় পরীক্ষা করবে:
+
+১. Mobile Registration
+
+২. Email Registration
+
+৩. Duplicate Account Prevention
+
+৪. OTP ছাড়া Login
+
+৫. Mobile Login
+
+৬. Email Login
+
+৭. Incorrect Password Error
+
+৮. Secure Password Recovery
+
+৯. Pending Donor Public না হওয়া
+
+১০. Admin Approval
+
+১১. Phone Privacy
+
+১২. Blood Request Creation
+
+১৩. Request Approval
+
+১৪. Multiple Representative Assignment
+
+১৫. Representative Area Restriction
+
+১৬. API Manipulation Prevention
+
+১৭. Representative Recommendation
+
+১৮. Admin Final Approval
+
+১৯. Campaign Management
+
+২০. Notification System
+
+২১. Database Auto Setup
+
+২২. Database Setup পুনরায় চালালে Data অক্ষত থাকা
+
+২৩. Mobile Responsive Design
+
+২৪. Button এবং Form Functionality
+
+২৫. Animation Performance
+
+---
+
+২৮. Development Workflow
+
+প্রজেক্টটি নিচের ধাপে তৈরি করবে।
+
+Phase 1: Project Architecture
+
+- Full Architecture
+- Folder Structure
+- Database Schema
+- API Structure
+- UI Component Plan
+
+Phase 2: Database Setup
+
+Google Apps Script দিয়ে ২৩টি Sheet স্বয়ংক্রিয়ভাবে তৈরি করবে।
+
+Phase 3: Backend Development
+
+- Authentication
+- Donor System
+- Request System
+- Admin System
+- Representative System
+- Campaign System
+- Notification System
+
+Phase 4: Frontend Development
+
+- Homepage
+- Public Pages
+- Registration
+- Login
+- Donor Dashboard
+- Recipient Dashboard
+- Volunteer Dashboard
+- Representative Dashboard
+- Admin Dashboard
+- Super Admin Dashboard
+
+Phase 5: UI/UX Polish
+
+- Premium Blood Red Theme
+- Compact Cards
+- Responsive Layout
+- Animation System
+- Form Design
+- Navigation
+- Dashboard Styling
+
+Phase 6: Integration
+
+Frontend এবং Backend সম্পূর্ণভাবে যুক্ত করবে।
+
+Phase 7: Security Testing
+
+Authentication এবং Permission System পরীক্ষা করবে।
+
+Phase 8: Final Testing
+
+সব ফিচার পরীক্ষা করবে।
+
+Phase 9: Deployment
+
+Frontend এবং Google Apps Script Deploy করার বিস্তারিত নির্দেশনা বাংলায় দেবে।
+
+---
+
+২৯. Claude-এর জন্য বাধ্যতামূলক নির্দেশনা
+
+১. শুধু Design তৈরি করবে না। সম্পূর্ণ Functional Website তৈরি করবে।
+
+২. কোনো গুরুত্বপূর্ণ Button Inactive রাখা যাবে না।
+
+৩. কোনো Form শুধু UI হিসেবে রাখা যাবে না।
+
+৪. কোনো API শুধু Placeholder হিসেবে রাখা যাবে না।
+
+৫. প্রতিটি ফাইলের সম্পূর্ণ Code দিতে হবে।
+
+৬. কোনো গুরুত্বপূর্ণ Function অসম্পূর্ণ রাখা যাবে না।
+
+৭. প্রতিটি Page-এ একই Blood Red Design System বজায় রাখতে হবে।
+
+৮. প্রতিটি Interactive Element-এ উপযুক্ত Professional Animation থাকতে হবে।
+
+৯. সব Page Responsive হতে হবে।
+
+১০. কোনো OTP System যুক্ত করা যাবে না।
+
+১১. Admin Approval ছাড়া Donor Public করা যাবে না।
+
+১২. Representative শুধু Assigned Area-এর ডেটা দেখতে পারবে।
+
+১৩. একই এলাকায় একাধিক Representative Assign করা যাবে।
+
+১৪. Backend Permission Check বাধ্যতামূলক।
+
+১৫. Google Sheets Database Setup স্বয়ংক্রিয় হতে হবে।
+
+১৬. Setup Function পুনরায় চালালেও আগের Data নষ্ট করা যাবে না।
+
+১৭. Password নিরাপদভাবে সংরক্ষণ করতে হবে।
+
+১৮. Security Limitation থাকলে তা স্পষ্টভাবে জানাতে হবে।
+
+১৯. কোনো পরিবর্তন করলে সংশ্লিষ্ট ফাইলগুলোর Compatibility পরীক্ষা করতে হবে।
+
+২০. আমি কোনো নতুন নির্দেশনা দিলে সেটি বুঝে আগের Project-এর সঙ্গে সামঞ্জস্য রেখে পরিবর্তন করতে হবে।
+
+---
+
+৩০. আমার সঙ্গে যোগাযোগের নিয়ম
+
+তোমার সব ব্যাখ্যা, প্রশ্ন, নির্দেশনা এবং Error Explanation বাংলায় দিতে হবে।
+
+আমি একজন Project Owner হিসেবে তোমাকে নির্দেশনা দেব।
+
+তাই প্রতিটি Technical বিষয় সহজ বাংলায় বুঝিয়ে বলবে।
+
+আমি কোনো Error দিলে:
+
+- Error কেন হয়েছে জানাবে।
+- কোন ফাইলে সমস্যা তা জানাবে।
+- কীভাবে ঠিক করতে হবে জানাবে।
+- প্রয়োজন হলে সম্পূর্ণ Corrected Code দেবে।
+
+একবারে অনেক ফাইলের Code দিতে না পারলে ধাপে ধাপে দেবে।
+
+আগের কাজের ধারাবাহিকতা বজায় রাখবে।
+
+---
+
+৩১. এখন কাজ শুরু করো
+
+প্রথমে আমাকে সম্পূর্ণ Project Architecture, Database Architecture, Frontend Folder Structure, Backend Folder Structure এবং UI Design System বুঝিয়ে দাও।
+
+বিশেষ করে Premium Blood Red Design System-এর একটি পরিষ্কার পরিকল্পনা তৈরি করো।
+
+তারপর Google Apps Script Database Setup Code তৈরি করবে, যেটি Run করলে স্বয়ংক্রিয়ভাবে সব ২৩টি Google Sheets তৈরি হবে।
+
+প্রতিটি Phase সম্পূর্ণ করার পর আমাকে বাংলায় জানাবে কী তৈরি হয়েছে এবং পরবর্তী ধাপে কী করতে হবে।
+
+আমার চূড়ান্ত লক্ষ্য:
+
+একটি সম্পূর্ণ Premium Blood Red Theme-ভিত্তিক, Compact Card Design-সহ, Professional Animation-যুক্ত, Secure, Responsive এবং Fully Functional Blood Donation Management Platform তৈরি করা।
+
+মনে রাখবে: এই ওয়েবসাইটের প্রতিটি পেজ, প্রতিটি সেকশন, প্রতিটি বাটন, প্রতিটি ফর্ম এবং প্রতিটি Dashboard-এ একই Premium Blood Red Brand Identity বজায় রাখতে হবে।

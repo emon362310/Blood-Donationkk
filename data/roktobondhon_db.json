@@ -1,0 +1,533 @@
+{
+  "Users": [
+    {
+      "user_id": "USR_MWT5TBHM_AAAF28FE",
+      "full_name": "Emon Kumar",
+      "email": "",
+      "phone": "01781099407",
+      "password_hash": "7ed126377b5810412fa47ea256f2131ee72c8ec086b4f472876fd4bbf9ebb7ec28d3f8b123d0553fde2d2b57af6cde664ef93d11864e365248db1d3ce52c6807",
+      "password_salt": "3dc7775cbc26f1e6dbc69d1808dd4a22",
+      "role": "volunteer",
+      "account_status": "active",
+      "email_verified": false,
+      "phone_verified": false,
+      "profile_image": "data:image/jpeg;base64,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",
+      "created_at": "2026-11-23T11:05:29.962Z",
+      "updated_at": "2026-11-23T11:05:29.962Z",
+      "last_login": "2026-11-23T11:05:29.962Z",
+      "deleted_at": ""
+    },
+    {
+      "user_id": "USR_MWT60WJC_F1793D78",
+      "full_name": "Emon Kumar",
+      "email": "itzemon670@gmail.com",
+      "phone": "01824554565",
+      "password_hash": "537234b99d5cf51222bf1734822a10672a07bca6cc2823a00243b76cbc225f3342e8e64d070e5750f7b720fd5357441ef37601cb67575fe4a41022508c063699",
+      "password_salt": "8b7bd23855836896c18dbd9d48e11634",
+      "role": "donor",
+      "account_status": "active",
+      "email_verified": false,
+      "phone_verified": false,
+      "profile_image": "data:image/jpeg;base64,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",
+      "created_at": "2026-11-23T11:11:23.832Z",
+      "updated_at": "2026-11-23T11:11:23.832Z",
+      "last_login": "2026-11-23T11:11:23.832Z",
+      "deleted_at": ""
+    },
+    {
+      "user_id": "USR_MWT652OT_AF73B7AF",
+      "full_name": "সুপার অ্যাডমিন",
+      "email": "teamchinmoyee@gmail.com",
+      "phone": "01883336231",
+      "password_hash": "e270947e6b9340b725b85ac9655933cdc6ef26e94b196d1b5e894249a14bd634da5b62680b2c476b2bd4508191db46b64774e8d2d6211bef7a549370566c10e4",
+      "password_salt": "67ab1c44606d91a928ae41cac14f44ad",
+      "role": "super_admin",
+      "account_status": "active",
+      "email_verified": true,
+      "phone_verified": true,
+      "profile_image": "",
+      "created_at": "2026-11-23T11:14:38.430Z",
+      "updated_at": "2026-11-23T11:14:38.430Z",
+      "last_login": "2026-11-23T11:14:38.430Z",
+      "deleted_at": ""
+    }
+  ],
+  "Donors": [
+    {
+      "donor_id": "DNR_MWT60WJC_D2DD0C78",
+      "user_id": "USR_MWT60WJC_F1793D78",
+      "blood_group": "O+",
+      "date_of_birth": "2006-08-07",
+      "gender": "পুরুষ",
+      "division": "চট্টগ্রাম",
+      "district": "চট্টগ্রাম",
+      "upazila": "হাটহাজারী",
+      "union_name": "North Madarsha",
+      "ward": "5",
+      "area": "",
+      "address": "",
+      "last_donation_date": "",
+      "availability": "available",
+      "verification_status": "Approved",
+      "phone_visibility": "private",
+      "bio": "",
+      "created_at": "2026-11-23T11:11:23.832Z",
+      "updated_at": "2026-11-23T11:15:09.706Z"
+    }
+  ],
+  "Recipients": [],
+  "Blood_Requests": [],
+  "Donations": [],
+  "Verifications": [
+    {
+      "verification_id": "VRF_MWT65P8Q_2C0D8793",
+      "donor_id": "DNR_MWT60WJC_D2DD0C78",
+      "admin_id": "USR_MWT652OT_AF73B7AF",
+      "representative_id": "",
+      "verification_type": "admin_verification",
+      "verification_result": "তথ্য সঠিক",
+      "verification_notes": "",
+      "verified_phone": true,
+      "verified_blood_group": true,
+      "verification_date": "2026-11-23T11:15:07.658Z",
+      "previous_status": "Pending Verification",
+      "new_status": "Approved"
+    },
+    {
+      "verification_id": "VRF_MWT65QTM_49F764A1",
+      "donor_id": "DNR_MWT60WJC_D2DD0C78",
+      "admin_id": "USR_MWT652OT_AF73B7AF",
+      "representative_id": "",
+      "verification_type": "admin_verification",
+      "verification_result": "তথ্য সঠিক",
+      "verification_notes": "",
+      "verified_phone": true,
+      "verified_blood_group": true,
+      "verification_date": "2026-11-23T11:15:09.706Z",
+      "previous_status": "Approved",
+      "new_status": "Approved"
+    }
+  ],
+  "Volunteers": [
+    {
+      "volunteer_id": "VOL_MWT5TBHN_4CA0A88E",
+      "user_id": "USR_MWT5TBHM_AAAF28FE",
+      "skills": "kicu nai",
+      "division": "চট্টগ্রাম",
+      "district": "চট্টগ্রাম",
+      "upazila": "হাটহাজারী",
+      "availability": "available",
+      "approval_status": "Pending",
+      "joined_at": "2026-11-23T11:05:29.962Z"
+    }
+  ],
+  "Campaigns": [
+    {
+      "campaign_id": "CMP_INIT_01",
+      "campaign_title": "ঢাকা মেডিকেল কলেজ স্বেচ্ছাসেবী রক্তদান ক্যাম্পেইন ২০২৬",
+      "campaign_description": "নিরাপদ রক্ত সঞ্চালন নিশ্চিত করতে ও থ্যালাসেমিয়া রোগীদের সহায়তায় আমাদের বিশেষ এক দিনের স্বেচ্ছাসেবী রক্তদান কর্মসূচি।",
+      "banner_url": "/src/assets/images/campaign_community_drive_1795424733186.jpg",
+      "event_date": "2026-12-10",
+      "start_time": "Sat Dec 30 1899 09:00:00 GMT+0553 (Bangladesh Standard Time)",
+      "end_time": "Sat Dec 30 1899 16:00:00 GMT+0553 (Bangladesh Standard Time)",
+      "venue": "কেন্দ্রীয় মিলনায়তন, ঢাকা মেডিকেল কলেজ এলাকা",
+      "division": "ঢাকা",
+      "district": "ঢাকা",
+      "upazila": "ধানমন্ডি",
+      "organizer": "রক্তবন্ধন কেন্দ্রীয় কমিটি",
+      "registration_limit": 200,
+      "campaign_status": "Upcoming",
+      "created_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "campaign_id": "CMP_INIT_02",
+      "campaign_title": "চট্টগ্রাম বিভাগীয় জরুরি রক্তদাতা নিবন্ধন ও গ্রুপিং ক্যাম্প",
+      "campaign_description": "বিনামূল্যে রক্তের গ্রুপ নির্ণয়, নতুন ডোনার নিবন্ধন ও সচেতনতামূলক সেমিনার।",
+      "banner_url": "/src/assets/images/hero_blood_donation_1795424733544.jpg",
+      "event_date": "2026-12-18",
+      "start_time": "Sat Dec 30 1899 10:00:00 GMT+0553 (Bangladesh Standard Time)",
+      "end_time": "Sat Dec 30 1899 17:00:00 GMT+0553 (Bangladesh Standard Time)",
+      "venue": "চট্টগ্রাম জেলা শিল্পকলা একাডেমি প্রাঙ্গণ",
+      "division": "চট্টগ্রাম",
+      "district": "চট্টগ্রাম",
+      "upazila": "চট্টগ্রাম সদর",
+      "organizer": "রক্তবন্ধন চট্টগ্রাম টিম",
+      "registration_limit": 150,
+      "campaign_status": "Upcoming",
+      "created_at": "2026-11-23T09:15:09.334Z"
+    }
+  ],
+  "Campaign_Registrations": [],
+  "Contact_Requests": [],
+  "Notifications": [
+    {
+      "notification_id": "NTF_MWT5TBHN_4E742575",
+      "user_id": "USR_MWT5TBHM_AAAF28FE",
+      "title": "রেজিস্ট্রেশন সফল হয়েছে",
+      "message": "রক্তবন্ধন প্ল্যাটফর্মে আপনার অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে।",
+      "notification_type": "registration_success",
+      "reference_id": "USR_MWT5TBHM_AAAF28FE",
+      "is_read": true,
+      "created_at": "2026-11-23T11:05:29.963Z"
+    },
+    {
+      "notification_id": "NTF_MWT60WJD_114EB578",
+      "user_id": "USR_MWT60WJC_F1793D78",
+      "title": "রেজিস্ট্রেশন সফল হয়েছে",
+      "message": "রক্তবন্ধন-এ স্বাগতম! আপনার ডোনার প্রোফাইল অ্যাডমিন যাচাইকরণের জন্য জমা হয়েছে। অনুমোদনের পর ডিরেক্টরিতে যুক্ত হবে।",
+      "notification_type": "registration_success",
+      "reference_id": "USR_MWT60WJC_F1793D78",
+      "is_read": false,
+      "created_at": "2026-11-23T11:11:23.833Z"
+    },
+    {
+      "notification_id": "NTF_MWT65P8Q_C472924A",
+      "user_id": "USR_MWT60WJC_F1793D78",
+      "title": "ডোনার প্রোফাইল অনুমোদিত",
+      "message": "অভিনন্দন! আপনার ডোনার প্রোফাইল অনুমোদিত হয়েছে এবং এখন ডিরেক্টরিতে দৃশ্যমান।",
+      "notification_type": "donor_approved",
+      "reference_id": "DNR_MWT60WJC_D2DD0C78",
+      "is_read": false,
+      "created_at": "2026-11-23T11:15:07.658Z"
+    },
+    {
+      "notification_id": "NTF_MWT65QTM_DD017292",
+      "user_id": "USR_MWT60WJC_F1793D78",
+      "title": "ডোনার প্রোফাইল অনুমোদিত",
+      "message": "অভিনন্দন! আপনার ডোনার প্রোফাইল অনুমোদিত হয়েছে এবং এখন ডিরেক্টরিতে দৃশ্যমান।",
+      "notification_type": "donor_approved",
+      "reference_id": "DNR_MWT60WJC_D2DD0C78",
+      "is_read": false,
+      "created_at": "2026-11-23T11:15:09.706Z"
+    }
+  ],
+  "Messages": [],
+  "Locations": [
+    {
+      "location_id": "LOC_1",
+      "division_name": "ঢাকা",
+      "district_name": "ঢাকা",
+      "upazila_name": "ধানমন্ডি",
+      "union_name": "",
+      "ward_name": "",
+      "is_active": "true",
+      "sort_order": "1"
+    },
+    {
+      "location_id": "LOC_2",
+      "division_name": "চট্টগ্রাম",
+      "district_name": "চট্টগ্রাম",
+      "upazila_name": "হাটহাজারী",
+      "union_name": "",
+      "ward_name": "",
+      "is_active": "true",
+      "sort_order": "2"
+    },
+    {
+      "location_id": "LOC_3",
+      "division_name": "রাজশাহী",
+      "district_name": "রাজশাহী",
+      "upazila_name": "বোয়ালিয়া",
+      "union_name": "",
+      "ward_name": "",
+      "is_active": "true",
+      "sort_order": "3"
+    },
+    {
+      "location_id": "LOC_4",
+      "division_name": "সিলেট",
+      "district_name": "সিলেট",
+      "upazila_name": "সিলেট সদর",
+      "union_name": "",
+      "ward_name": "",
+      "is_active": "true",
+      "sort_order": "4"
+    }
+  ],
+  "Blogs": [
+    {
+      "blog_id": "BLG_01",
+      "title": "রক্তদান কেন জরুরি? শরীরের ওপর এর বৈজ্ঞানিক উপকারিতা",
+      "slug": "why-blood-donation-matters",
+      "category": "স্বাস্থ্য সচেতনতা",
+      "thumbnail_url": "/src/assets/images/blog_blood_science_1795424733543.jpg",
+      "content": "একজন সুস্থ প্রাপ্তবয়স্ক মানুষ প্রতি ৪ মাস (১২০ দিন) পরপর নিরাপদে রক্তদান করতে পারেন। এক ব্যাগ রক্ত থেকে লোহিত রক্তকণিকা, প্লাজমা এবং প্লাটিলেট আলাদা করে সর্বোচ্চ তিনজন মুমূর্ষু রোগীর জীবন বাঁচানো সম্ভব।\n\nনিয়মিত রক্তদান শরীরের অতিরিক্ত আয়রনের ভারসাম্য বজায় রাখে, হৃদরোগের ঝুঁকি কমাতে সহায়তা করে এবং অস্থিমজ্জায় নতুন রক্তকণিকা তৈরিতে উদ্দীপনা জোগায়। রক্তদানের আগে রক্তচাপ, হিমোগ্লোবিন এবং ওজন পরীক্ষা করা হয় বলে রক্তদাতা নিজেও নিজের স্বাস্থ্য সম্পর্কে অবগত থাকতে পারেন।",
+      "author_id": "SYSTEM",
+      "publish_status": "Published",
+      "published_at": "2026-11-23T09:15:09.334Z",
+      "created_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "blog_id": "BLG_02",
+      "title": "রক্তদানের আগে ও পরে কী করবেন: সম্পূর্ণ নির্দেশিকা",
+      "slug": "before-and-after-blood-donation",
+      "category": "প্রস্তুতি ও যত্ন",
+      "thumbnail_url": "/src/assets/images/hero_blood_donation_1795424733544.jpg",
+      "content": "রক্তদানের পূর্বে পর্যাপ্ত বিশ্রাম এবং সুষম খাবার গ্রহণ অত্যন্ত গুরুত্বপূর্ণ। রক্তদানের কমপক্ষে ২-৩ ঘণ্টা আগে হালকা পুষ্টিকর খাবার খান এবং প্রচুর বিশুদ্ধ পানি পান করুন।\n\nরক্তদানের পর অন্তত ১৫-২০ মিনিট বিশ্রাম নিন, তরল পানীয় ও ফলের রস পান করুন এবং পরবর্তী ২৪ ঘণ্টা ভারী ব্যায়াম বা ধূমপান এড়িয়ে চলুন। সূঁচ ফোটানোর স্থানে ব্যান্ডেজ অন্তত ৪-৫ ঘণ্টা রাখুন।",
+      "author_id": "SYSTEM",
+      "publish_status": "Published",
+      "published_at": "2026-11-23T09:15:09.334Z",
+      "created_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "blog_id": "BLG_03",
+      "title": "রক্তের গ্রুপ ও Rh ফ্যাক্টর বোঝার সহজ উপায়",
+      "slug": "understanding-blood-groups-and-rh",
+      "category": "রক্তের বিজ্ঞান",
+      "thumbnail_url": "/src/assets/images/about_humanity_care_1795424733401.jpg",
+      "content": "মানুষের রক্তে ABO এবং Rh (রিসাস) পদ্ধতিতে মোট ৮টি প্রধান গ্রুপ রয়েছে: A+, A-, B+, B-, AB+, AB-, O+ এবং O-। জরুরি অবস্থায় সঠিক গ্রুপের রক্ত ও ক্রস-ম্যাচিং ছাড়া রক্ত সঞ্চালন মারাত্মক জটিলতা সৃষ্টি করতে পারে।\n\nO- গ্রুপের লোহিত রক্তকণিকা জরুরি অবস্থায় সব গ্রুপের রোগীকে দেওয়া যায়, তাই একে সর্বজনীন দাতা বলা হয়। অন্যদিকে AB+ গ্রুপের মানুষ যেকোনো গ্রুপের রক্ত গ্রহণ করতে পারেন।",
+      "author_id": "SYSTEM",
+      "publish_status": "Published",
+      "published_at": "2026-11-23T09:15:09.334Z",
+      "created_at": "2026-11-23T09:15:09.334Z"
+    }
+  ],
+  "Admins": [
+    {
+      "admin_id": "ADM_MWT652OU_B18EA740",
+      "full_name": "সুপার অ্যাডমিন",
+      "email": "teamchinmoyee@gmail.com",
+      "phone": "01883336231",
+      "role": "super_admin",
+      "permissions": "ALL",
+      "account_status": "active",
+      "created_at": "2026-11-23T11:14:38.430Z",
+      "last_login": "2026-11-23T11:14:38.430Z"
+    }
+  ],
+  "Activity_Logs": [
+    {
+      "log_id": "LOG_MWT5TBHN_4962B4C2",
+      "actor_id": "USR_MWT5TBHM_AAAF28FE",
+      "actor_role": "volunteer",
+      "action": "REGISTER",
+      "module": "Auth",
+      "record_id": "USR_MWT5TBHM_AAAF28FE",
+      "description": "Emon Kumar (volunteer) নিবন্ধন করেছেন",
+      "timestamp": "2026-11-23T11:05:29.963Z"
+    },
+    {
+      "log_id": "LOG_MWT60WJD_A908479E",
+      "actor_id": "USR_MWT60WJC_F1793D78",
+      "actor_role": "donor",
+      "action": "REGISTER",
+      "module": "Auth",
+      "record_id": "USR_MWT60WJC_F1793D78",
+      "description": "Emon Kumar (donor) নিবন্ধন করেছেন",
+      "timestamp": "2026-11-23T11:11:23.833Z"
+    },
+    {
+      "log_id": "LOG_MWT652OU_97BF9B2C",
+      "actor_id": "USR_MWT652OT_AF73B7AF",
+      "actor_role": "super_admin",
+      "action": "BOOTSTRAP_SUPER_ADMIN",
+      "module": "Auth",
+      "record_id": "USR_MWT652OT_AF73B7AF",
+      "description": "প্রথম সুপার অ্যাডমিন অ্যাকাউন্ট তৈরি",
+      "timestamp": "2026-11-23T11:14:38.430Z"
+    },
+    {
+      "log_id": "LOG_MWT65P8Q_D150051A",
+      "actor_id": "USR_MWT652OT_AF73B7AF",
+      "actor_role": "super_admin",
+      "action": "VERIFY_DONOR",
+      "module": "Donors",
+      "record_id": "DNR_MWT60WJC_D2DD0C78",
+      "description": "Pending Verification -> Approved",
+      "timestamp": "2026-11-23T11:15:07.658Z"
+    },
+    {
+      "log_id": "LOG_MWT65QTM_E85CEEFF",
+      "actor_id": "USR_MWT652OT_AF73B7AF",
+      "actor_role": "super_admin",
+      "action": "VERIFY_DONOR",
+      "module": "Donors",
+      "record_id": "DNR_MWT60WJC_D2DD0C78",
+      "description": "Approved -> Approved",
+      "timestamp": "2026-11-23T11:15:09.706Z"
+    }
+  ],
+  "Settings": [
+    {
+      "setting_key": "site_name",
+      "setting_value": "BLOODIX",
+      "setting_group": "general",
+      "description": "ওয়েবসাইটের নাম",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "setting_key": "site_tagline",
+      "setting_value": "Donate Blood • Save Lives",
+      "setting_group": "general",
+      "description": "প্রধান স্লোগান",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "setting_key": "contact_email",
+      "setting_value": "support@bloodix.org",
+      "setting_group": "general",
+      "description": "যোগাযোগের ইমেইল",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "setting_key": "contact_phone",
+      "setting_value": "01700-000000",
+      "setting_group": "general",
+      "description": "জরুরি হেল্পলাইন",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "setting_key": "registration_enabled",
+      "setting_value": "true",
+      "setting_group": "registration",
+      "description": "ব্যবহারকারী নিবন্ধন চালু",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "setting_key": "donor_manual_approval",
+      "setting_value": "true",
+      "setting_group": "donor",
+      "description": "অ্যাডমিন অনুমোদন বাধ্যতামূলক",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "setting_key": "phone_public_default",
+      "setting_value": "false",
+      "setting_group": "donor",
+      "description": "ডিফল্ট ফোন প্রাইভেসি",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "setting_key": "request_approval_required",
+      "setting_value": "true",
+      "setting_group": "request",
+      "description": "অনুরোধ অনুমোদন বাধ্যতামূলক",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "setting_key": "multiple_rep_per_area",
+      "setting_value": "true",
+      "setting_group": "representative",
+      "description": "একই এলাকায় একাধিক প্রতিনিধি অনুমোদিত",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "setting_key": "session_ttl_hours",
+      "setting_value": "24",
+      "setting_group": "security",
+      "description": "সেশন মেয়াদ (ঘণ্টা)",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "setting_key": "login_rate_limit",
+      "setting_value": "5",
+      "setting_group": "security",
+      "description": "সর্বোচ্চ ব্যর্থ লগইন চেষ্টা",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "setting_key": "maintenance_mode",
+      "setting_value": "false",
+      "setting_group": "system",
+      "description": "মেইনটেন্যান্স মোড",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T09:15:09.334Z"
+    },
+    {
+      "setting_key": "site_logo",
+      "setting_value": "/assets/aistudio/image-removebg-preview__1__4794faaf.png",
+      "setting_group": "general",
+      "description": "ওয়েবসাইট লোগো",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T11:33:11.969Z"
+    },
+    {
+      "setting_key": "contact_address",
+      "setting_value": "ঢাকা, বাংলাদেশ",
+      "setting_group": "general",
+      "description": "অফিসের ঠিকানা",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T11:33:11.969Z"
+    },
+    {
+      "setting_key": "hero_title",
+      "setting_value": "রক্তের অভাবে যেন থেমে না যায় কোনো প্রাণ",
+      "setting_group": "homepage",
+      "description": "হোমপেজ হিরো শিরোনাম",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T11:33:11.969Z"
+    },
+    {
+      "setting_key": "hero_subtitle",
+      "setting_value": "আপনার এক ব্যাগ রক্ত বাঁচাতে পারে একটি জীবন। রক্তদাতা খুঁজুন, রক্তদান করুন, মানুষের পাশে দাঁড়ান।",
+      "setting_group": "homepage",
+      "description": "হোমপেজ হিরো বিবরণ",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T11:33:11.969Z"
+    },
+    {
+      "setting_key": "poster_slider_title",
+      "setting_value": "সফল রক্তদাতাদের সম্মাননা পোস্টার",
+      "setting_group": "homepage",
+      "description": "পোস্টার স্লাইডার শিরোনাম",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T11:33:11.969Z"
+    },
+    {
+      "setting_key": "show_poster_slider",
+      "setting_value": "true",
+      "setting_group": "homepage",
+      "description": "হোমপেজে পোস্টার স্লাইডার চালু",
+      "updated_by": "SYSTEM",
+      "updated_at": "2026-11-23T11:33:11.969Z"
+    }
+  ],
+  "System_Logs": [],
+  "Representatives": [],
+  "Representative_Assignments": [],
+  "Representative_Tasks": [],
+  "Representative_Reports": [],
+  "Representative_Permissions": [],
+  "Sessions": [
+    {
+      "session_id": "SES_MWT5TBHN_DE8A901A",
+      "user_id": "USR_MWT5TBHM_AAAF28FE",
+      "token_hash": "855e4e59398e5b1a7ebf232256340d2d215b4bb9dc7f2510320e010ef8a41f92",
+      "role": "volunteer",
+      "expires_at": "2026-11-24T11:05:29.963Z",
+      "revoked": false,
+      "created_at": "2026-11-23T11:05:29.962Z"
+    },
+    {
+      "session_id": "SES_MWT60WJD_CF7AABC5",
+      "user_id": "USR_MWT60WJC_F1793D78",
+      "token_hash": "e02f3e4293ba933f10d5a4e4d3f32f8deebd4a7b27a790dbde971387366ba73a",
+      "role": "donor",
+      "expires_at": "2026-11-24T11:11:23.833Z",
+      "revoked": true,
+      "created_at": "2026-11-23T11:11:23.832Z"
+    },
+    {
+      "session_id": "SES_MWT652OU_D9AF772F",
+      "user_id": "USR_MWT652OT_AF73B7AF",
+      "token_hash": "f188da5de5ce50a9a7dfef492d412bef80e5b26f04200d28f119c886356c9347",
+      "role": "super_admin",
+      "expires_at": "2026-11-24T11:14:38.430Z",
+      "revoked": true,
+      "created_at": "2026-11-23T11:14:38.430Z"
+    }
+  ],
+  "Password_Resets": [],
+  "Donor_Posters": []
+}
