@@ -2,5 +2,7 @@
   "name": "রক্তবন্ধন (RoktoBondhon)",
   "description": "বাংলাদেশের একটি পূর্ণাঙ্গ, নিরাপদ ও প্রিমিয়াম রক্তদান ও ডোনার ব্যবস্থাপনা প্ল্যাটফর্ম।",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

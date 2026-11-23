@@ -1,4 +1,5 @@
 import fs from 'fs';
+import os from 'os';
 import path from 'path';
 import { generateId } from './security';
 
@@ -59,7 +60,25 @@ export interface DatabaseSchema {
   Donor_Posters: any[];
 }
 
-const DATA_DIR = path.resolve(process.cwd(), 'data');
+const BUNDLED_DATA_DIR = path.resolve(process.cwd(), 'data');
+const BUNDLED_DB_FILE = path.join(BUNDLED_DATA_DIR, 'roktobondhon_db.json');
+
+function resolveWritableDataDir(): string {
+  if (process.env.VERCEL === '1' || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    return path.join(os.tmpdir(), 'bloodix_data');
+  }
+  try {
+    if (!fs.existsSync(BUNDLED_DATA_DIR)) {
+      fs.mkdirSync(BUNDLED_DATA_DIR, { recursive: true });
+    }
+    fs.accessSync(BUNDLED_DATA_DIR, fs.constants.W_OK);
+    return BUNDLED_DATA_DIR;
+  } catch {
+    return path.join(os.tmpdir(), 'bloodix_data');
+  }
+}
+
+const DATA_DIR = resolveWritableDataDir();
 const DB_FILE = path.join(DATA_DIR, 'roktobondhon_db.json');
 
 function nowDhaka(): string {
@@ -228,20 +247,31 @@ function ensureBrandAndSettings(db: DatabaseSchema, base: DatabaseSchema): boole
 
 export function getDb(): DatabaseSchema {
   if (cachedDb) return cachedDb;
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+  } catch {
+    // Fallback strictly to memory if directory creation fails
   }
-  if (!fs.existsSync(DB_FILE)) {
+
+  const sourceFile = fs.existsSync(DB_FILE)
+    ? DB_FILE
+    : fs.existsSync(BUNDLED_DB_FILE)
+      ? BUNDLED_DB_FILE
+      : null;
+
+  if (!sourceFile) {
     cachedDb = createInitialDatabase();
     saveDb(cachedDb);
     return cachedDb;
   }
   try {
-    const raw = fs.readFileSync(DB_FILE, 'utf-8');
+    const raw = fs.readFileSync(sourceFile, 'utf-8');
     const parsed = JSON.parse(raw);
     const base = createInitialDatabase();
     cachedDb = { ...base, ...parsed };
-    if (ensureBrandAndSettings(cachedDb!, base)) {
+    if (ensureBrandAndSettings(cachedDb!, base) || sourceFile !== DB_FILE) {
       saveDb(cachedDb!);
     }
     return cachedDb!;
@@ -253,13 +283,17 @@ export function getDb(): DatabaseSchema {
 }
 
 export function saveDb(db: DatabaseSchema): void {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  const tmpFile = `${DB_FILE}.tmp`;
-  fs.writeFileSync(tmpFile, JSON.stringify(db, null, 2), 'utf-8');
-  fs.renameSync(tmpFile, DB_FILE);
   cachedDb = db;
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    const tmpFile = `${DB_FILE}.tmp`;
+    fs.writeFileSync(tmpFile, JSON.stringify(db, null, 2), 'utf-8');
+    fs.renameSync(tmpFile, DB_FILE);
+  } catch {
+    // Memory cache remains up-to-date and Google Sheet remains persistent backend
+  }
 }
 
 export function addNotification(

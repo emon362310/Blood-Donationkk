@@ -1,7 +1,7 @@
 import type { ApiResponse } from '../types';
 
 // Session token is held strictly in React/JS memory (never in localStorage/sessionStorage).
-// Persistent reload sessions use HttpOnly Secure SameSite=None Partitioned cookies managed by the server.
+// Persistent reload sessions use HttpOnly cookies managed by the server.
 let memoryBearerToken: string | null = null;
 
 export function setMemoryToken(token: string | null): void {
@@ -37,12 +37,22 @@ export async function apiRequest<T = any>(
       credentials: 'include',
       body: body !== undefined ? JSON.stringify(body) : undefined
     });
-    const json = (await res.json()) as ApiResponse<T>;
-    return json;
+    const rawText = await res.text();
+    try {
+      const json = JSON.parse(rawText) as ApiResponse<T>;
+      return json;
+    } catch {
+      return {
+        success: false,
+        message: `সার্ভার থেকে সঠিক তথ্য পাওয়া যায়নি (${res.status})। অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।`,
+        data: null,
+        error: `HTTP_${res.status}`
+      };
+    }
   } catch (err: any) {
     return {
       success: false,
-      message: 'সার্ভারের সাথে সংযোগ স্থাপন করা যায়নি। অনুগ্রহ করে পুনরায় চেষ্টা করুন।',
+      message: 'সার্ভারের সাথে সংযোগ স্থাপন করা যায়নি। অনুগ্রহ করে ইন্টারনেট সংযোগ পরীক্ষা করে পুনরায় চেষ্টা করুন।',
       data: null,
       error: err?.message || 'NETWORK_ERROR'
     };

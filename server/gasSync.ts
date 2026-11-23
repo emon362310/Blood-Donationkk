@@ -1,3 +1,4 @@
+import crypto from 'crypto';
 import type { DatabaseSchema, StoredUser } from './db';
 import { saveDb } from './db';
 import { normalizePhone } from './security';
@@ -8,6 +9,16 @@ const USER_GAS_URL =
 export function getGasWebAppUrl(db?: DatabaseSchema): string {
   const fromSetting = db?.Settings?.find((s) => s.setting_key === 'gas_web_app_url')?.setting_value;
   return (fromSetting || process.env.GAS_WEB_APP_URL || USER_GAS_URL).trim();
+}
+
+export function getSessionSecret(db?: DatabaseSchema): string {
+  if (process.env.SESSION_SECRET && process.env.SESSION_SECRET.trim().length >= 16) {
+    return process.env.SESSION_SECRET.trim();
+  }
+  return crypto
+    .createHash('sha256')
+    .update(`${getGasWebAppUrl(db)}|bloodix-session-signing-v1`)
+    .digest('hex');
 }
 
 const TABLE_KEYS: Record<keyof DatabaseSchema, string> = {
@@ -142,6 +153,8 @@ async function callGasEndpoint<T = any>(
 }
 
 let hydratedOnce = false;
+let hydrateInFlight: Promise<boolean> | null = null;
+const IS_SERVERLESS = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
 let lastSyncStatus = {
   connected: false,
   lastHydratedAt: '',
@@ -158,7 +171,7 @@ export function getSheetSyncStatus(db?: DatabaseSchema) {
 
 export async function checkGasHealth(db?: DatabaseSchema) {
   const url = getGasWebAppUrl(db);
-  const res = await callGasEndpoint(url, { action: 'health' }, 8000);
+  const res = await callGasEndpoint(url, { action: 'health' }, 7000);
   lastSyncStatus.connected = res.ok;
   lastSyncStatus.lastError = res.ok ? '' : res.message || 'Unreachable';
   return { connected: res.ok, message: res.message || '', url };
@@ -169,75 +182,87 @@ export async function hydrateDbFromGoogleSheet(
   force = false
 ): Promise<boolean> {
   if (hydratedOnce && !force) return lastSyncStatus.connected;
-  const url = getGasWebAppUrl(db);
-  const res = await callGasEndpoint<{ tables: Record<string, any[]> }>(
-    url,
-    { action: 'pullAll' },
-    25000
-  );
-  if (!res.ok || !res.data?.tables) {
-    lastSyncStatus.connected = false;
-    lastSyncStatus.lastError = res.message || 'pullAll failed';
-    return false;
-  }
+  if (hydrateInFlight && !force) return hydrateInFlight;
 
-  const tables = res.data.tables;
-  const seedPushTables: (keyof DatabaseSchema)[] = [];
-
-  (Object.keys(TABLE_KEYS) as (keyof DatabaseSchema)[]).forEach((table) => {
-    const incoming = tables[table];
-    if (Array.isArray(incoming) && incoming.length > 0) {
-      const normalizedRows = incoming.map((r) => normalizeSheetRow(table, r));
-      const keyField = TABLE_KEYS[table];
-      const map = new Map<string, any>();
-      (db[table] as any[]).forEach((localItem) => {
-        if (localItem[keyField]) map.set(String(localItem[keyField]), localItem);
-      });
-      normalizedRows.forEach((sheetItem) => {
-        if (table === 'Settings') {
-          if (sheetItem.setting_key === 'site_name' && sheetItem.setting_value === 'রক্তবন্ধন (RoktoBondhon)') {
-            sheetItem.setting_value = 'BLOODIX';
-            seedPushTables.push('Settings');
-          }
-          if (sheetItem.setting_key === 'site_tagline' && sheetItem.setting_value === 'রক্তের অভাবে যেন থেমে না যায় কোনো প্রাণ') {
-            sheetItem.setting_value = 'Donate Blood • Save Lives';
-            seedPushTables.push('Settings');
-          }
-          if (sheetItem.setting_key === 'contact_email' && sheetItem.setting_value === 'support@roktobondhon.org') {
-            sheetItem.setting_value = 'support@bloodix.org';
-            seedPushTables.push('Settings');
-          }
-        }
-        if (sheetItem[keyField]) map.set(String(sheetItem[keyField]), sheetItem);
-      });
-      (db[table] as any[]) = Array.from(map.values());
-    } else if (
-      ['Settings', 'Campaigns', 'Blogs', 'Locations'].includes(table) &&
-      (db[table] as any[]).length > 0
-    ) {
-      seedPushTables.push(table);
+  const task = (async () => {
+    const url = getGasWebAppUrl(db);
+    const res = await callGasEndpoint<{ tables: Record<string, any[]> }>(
+      url,
+      { action: 'pullAll' },
+      IS_SERVERLESS ? 8500 : 20000
+    );
+    if (!res.ok || !res.data?.tables) {
+      lastSyncStatus.connected = false;
+      lastSyncStatus.lastError = res.message || 'pullAll failed';
+      return false;
     }
-  });
 
-  if (seedPushTables.length === 0) {
-    // Ensure new BLOODIX settings keys exist in Sheet if missing
-    const sheetSettings = Array.isArray(tables.Settings) ? tables.Settings : [];
-    const hasLogoInSheet = sheetSettings.some((s: any) => s.setting_key === 'site_logo');
-    if (!hasLogoInSheet && db.Settings.length > 0) {
-      seedPushTables.push('Settings');
+    const tables = res.data.tables;
+    const seedPushTables: (keyof DatabaseSchema)[] = [];
+
+    (Object.keys(TABLE_KEYS) as (keyof DatabaseSchema)[]).forEach((table) => {
+      const incoming = tables[table];
+      if (Array.isArray(incoming) && incoming.length > 0) {
+        const normalizedRows = incoming.map((r) => normalizeSheetRow(table, r));
+        const keyField = TABLE_KEYS[table];
+        const map = new Map<string, any>();
+        (db[table] as any[]).forEach((localItem) => {
+          if (localItem[keyField]) map.set(String(localItem[keyField]), localItem);
+        });
+        normalizedRows.forEach((sheetItem) => {
+          if (table === 'Settings') {
+            if (sheetItem.setting_key === 'site_name' && sheetItem.setting_value === 'রক্তবন্ধন (RoktoBondhon)') {
+              sheetItem.setting_value = 'BLOODIX';
+              seedPushTables.push('Settings');
+            }
+            if (sheetItem.setting_key === 'site_tagline' && sheetItem.setting_value === 'রক্তের অভাবে যেন থেমে না যায় কোনো প্রাণ') {
+              sheetItem.setting_value = 'Donate Blood • Save Lives';
+              seedPushTables.push('Settings');
+            }
+            if (sheetItem.setting_key === 'contact_email' && sheetItem.setting_value === 'support@roktobondhon.org') {
+              sheetItem.setting_value = 'support@bloodix.org';
+              seedPushTables.push('Settings');
+            }
+          }
+          if (sheetItem[keyField]) map.set(String(sheetItem[keyField]), sheetItem);
+        });
+        (db[table] as any[]) = Array.from(map.values());
+      } else if (
+        ['Settings', 'Campaigns', 'Blogs', 'Locations'].includes(table) &&
+        (db[table] as any[]).length > 0
+      ) {
+        seedPushTables.push(table);
+      }
+    });
+
+    if (seedPushTables.length === 0) {
+      const sheetSettings = Array.isArray(tables.Settings) ? tables.Settings : [];
+      const hasLogoInSheet = sheetSettings.some((s: any) => s.setting_key === 'site_logo');
+      if (!hasLogoInSheet && db.Settings.length > 0) {
+        seedPushTables.push('Settings');
+      }
+    }
+
+    saveDb(db);
+    hydratedOnce = true;
+    lastSyncStatus.connected = true;
+    lastSyncStatus.lastHydratedAt = new Date().toISOString();
+    lastSyncStatus.lastError = '';
+
+    if (seedPushTables.length > 0 && !IS_SERVERLESS) {
+      await pushTablesToGoogleSheet(db, seedPushTables);
+    }
+    return true;
+  })();
+
+  hydrateInFlight = task;
+  try {
+    return await task;
+  } finally {
+    if (hydrateInFlight === task) {
+      hydrateInFlight = null;
     }
   }
-
-  saveDb(db);
-  hydratedOnce = true;
-  lastSyncStatus.connected = true;
-  lastSyncStatus.lastHydratedAt = new Date().toISOString();
-  lastSyncStatus.lastError = '';
-
-  if (seedPushTables.length > 0) {
-    await pushTablesToGoogleSheet(db, seedPushTables);
-  }
-  return true;
 }
 
 export async function findUserInGoogleSheet(
@@ -254,7 +279,7 @@ export async function findUserInGoogleSheet(
     assignments?: any[];
     permissions?: any;
     admin?: any;
-  }>(url, { action: 'findUser', identifier }, 10000);
+  }>(url, { action: 'findUser', identifier }, IS_SERVERLESS ? 6500 : 10000);
 
   if (!res.ok || !res.data?.user) {
     return null;
@@ -351,7 +376,7 @@ export async function pushTablesToGoogleSheet(
       action: 'upsertBatch',
       tables: payloadTables
     },
-    20000
+    IS_SERVERLESS ? 6500 : 20000
   );
 
   if (res.ok) {

@@ -9,14 +9,61 @@ export function hashPassword(password: string, salt: string): string {
 }
 
 export function verifyPassword(password: string, storedHash: string, salt: string): boolean {
-  const computed = crypto.scryptSync(password, salt, 64);
-  const storedBuf = Buffer.from(storedHash, 'hex');
-  if (computed.length !== storedBuf.length) return false;
-  return crypto.timingSafeEqual(computed, storedBuf);
+  try {
+    if (!password || !storedHash || !salt) return false;
+    const computed = crypto.scryptSync(password, salt, 64);
+    const storedBuf = Buffer.from(String(storedHash).trim(), 'hex');
+    if (computed.length !== storedBuf.length) return false;
+    return crypto.timingSafeEqual(computed, storedBuf);
+  } catch {
+    return false;
+  }
 }
 
 export function generateSessionToken(): string {
   return crypto.randomBytes(32).toString('hex');
+}
+
+export function createSignedSessionToken(
+  sessionId: string,
+  userId: string,
+  role: string,
+  expiresAtMs: number,
+  secret: string
+): string {
+  const payload = Buffer.from(
+    JSON.stringify({ sid: sessionId, uid: userId, role, exp: expiresAtMs }),
+    'utf-8'
+  ).toString('base64url');
+  const sig = crypto.createHmac('sha256', secret).update(payload).digest('hex');
+  return `v1.${payload}.${sig}`;
+}
+
+export function verifySignedSessionToken(
+  token: string,
+  secret: string
+): { sessionId: string; userId: string; role: string; expiresAtMs: number } | null {
+  try {
+    if (!token || !token.startsWith('v1.')) return null;
+    const parts = token.split('.');
+    if (parts.length !== 3) return null;
+    const [, payload, sig] = parts;
+    const expectedSig = crypto.createHmac('sha256', secret).update(payload).digest('hex');
+    const a = Buffer.from(sig, 'hex');
+    const b = Buffer.from(expectedSig, 'hex');
+    if (a.length !== b.length || !crypto.timingSafeEqual(a, b)) return null;
+    const parsed = JSON.parse(Buffer.from(payload, 'base64url').toString('utf-8'));
+    if (!parsed?.uid || !parsed?.sid || typeof parsed?.exp !== 'number') return null;
+    if (parsed.exp <= Date.now()) return null;
+    return {
+      sessionId: String(parsed.sid),
+      userId: String(parsed.uid),
+      role: String(parsed.role || 'user'),
+      expiresAtMs: parsed.exp
+    };
+  } catch {
+    return null;
+  }
 }
 
 export function hashSessionToken(token: string): string {
