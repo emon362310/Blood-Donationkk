@@ -310,7 +310,7 @@ export function createApiApp(): express.Express {
           availability: d.availability,
           verification_status: d.verification_status,
           phone_visibility: d.phone_visibility,
-          phone: d.phone_visibility === 'public' ? u.phone : null
+          phone: u.phone
         };
       });
 
@@ -836,7 +836,7 @@ export function createApiApp(): express.Express {
         availability: d.availability,
         verification_status: d.verification_status,
         phone_visibility: d.phone_visibility,
-        phone: d.phone_visibility === 'public' ? u.phone : null,
+        phone: u.phone,
         bio: d.bio
       };
     });
@@ -873,7 +873,7 @@ export function createApiApp(): express.Express {
         availability: donor.availability,
         verification_status: donor.verification_status,
         phone_visibility: donor.phone_visibility,
-        phone: donor.phone_visibility === 'public' ? u.phone : null,
+        phone: u.phone,
         bio: donor.bio,
         verified_donations_count: verifiedDonations
       }

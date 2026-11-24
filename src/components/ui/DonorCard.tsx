@@ -146,7 +146,7 @@ export const DonorCard: React.FC<DonorCardProps> = ({
 
       {/* 2 Side-by-Side Action Buttons: যোগাযোগ + মেসেজ */}
       <div className="grid grid-cols-2 gap-2.5">
-        {!isPendingPreview && donor.phone_visibility === 'public' && donor.phone ? (
+        {!isPendingPreview && donor.phone ? (
           <a
             href={`tel:${donor.phone}`}
             title={donor.phone}

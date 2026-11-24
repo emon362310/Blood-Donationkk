@@ -104,13 +104,13 @@ export const DonorDetailsPage: React.FC = () => {
           )}
 
           <div className="pt-2">
-            {donor.phone_visibility === 'public' && donor.phone ? (
+            {donor.phone ? (
               <a
                 href={`tel:${donor.phone}`}
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#7F1023] to-[#D61F3C] rounded-xl tabular-nums"
+                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#7F1023] to-[#D61F3C] rounded-xl tabular-nums shadow-sm hover:brightness-110 transition-all"
               >
                 <Phone className="w-4 h-4" />
-                <span>কল করুন: {donor.phone}</span>
+                <span>সরাসরি কল করুন: {donor.phone}</span>
               </a>
             ) : (
               <button
